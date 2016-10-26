@@ -10,42 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var button: UIButton!
+    
+    @IBOutlet weak var textFieldUsername: UITextField!
+    @IBOutlet weak var textFieldPassword: UITextField!
+    @IBOutlet weak var buttonLogin: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-   
-    @IBAction func OnButtonClicked(_ sender: AnyObject) {
-        
+    
+    @IBAction func onButtonTapped(_ sender: AnyObject) {
         
         let whitespace = NSCharacterSet.whitespaces
-       
-        let range = passwordTextField.text?.rangeOfCharacter(from: whitespace)
         
-        // range will be nil if no whitespace is found
-        if range != nil {
-            showAlert("Password contains white spaces");
-        }
-    
-        if (passwordTextField.text!).isEmpty {
-            showAlert("Password Field should not be empty")
-        }
-        if (usernameTextField.text!).isEmpty {
+        let range = textFieldPassword.text?.rangeOfCharacter(from: whitespace)
+        
+        
+        if (textFieldUsername.text!).isEmpty {
             showAlert("username Field should not be empty")
-        }
-        
-        if usernameTextField.text == "murtaza" && passwordTextField.text == "murtaza" {
+        } else if (textFieldPassword.text!).isEmpty {
+            showAlert("Password Field should not be empty")
+        } else if range != nil {
+            showAlert("Password contains white spaces");
+        } else if textFieldUsername.text != "murtaza" && textFieldPassword.text != "murtaza" {
+            showAlert("Bad username or Bad password");
+        } else {
             showAlert("Logged in successfully");
         }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   
     }
     
     internal func showAlert(_ messageToBeShown: String) {
@@ -56,7 +49,10 @@ class ViewController: UIViewController {
         
         present(alertController, animated: true, completion: nil)
     }
-
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
 
