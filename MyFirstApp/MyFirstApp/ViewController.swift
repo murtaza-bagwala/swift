@@ -17,16 +17,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated:true);
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func onButtonTapped(_ sender: AnyObject) {
         
         let whitespace = NSCharacterSet.whitespaces
-        
         let range = textFieldPassword.text?.rangeOfCharacter(from: whitespace)
-        
-        
         if (textFieldUsername.text!).isEmpty {
             showAlert("username Field should not be empty")
         } else if (textFieldPassword.text!).isEmpty {
@@ -36,9 +35,9 @@ class ViewController: UIViewController {
         } else if textFieldUsername.text != "murtaza" && textFieldPassword.text != "murtaza" {
             showAlert("Bad username or Bad password");
         } else {
-            showAlert("Logged in successfully");
+            let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+            self.navigationController?.pushViewController(homeViewController!, animated: true)
         }
-   
     }
     
     internal func showAlert(_ messageToBeShown: String) {

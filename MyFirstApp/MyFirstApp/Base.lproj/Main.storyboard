@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <action selector="OnButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R2S-OX-98h"/>
+                                    <action selector="onButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KlL-AI-ZUl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAZ-Id-c1a">
@@ -60,21 +60,201 @@
                     </view>
                     <navigationItem key="navigationItem" id="w8M-eX-Edu"/>
                     <connections>
-                        <outlet property="button" destination="khS-S8-rKl" id="rlY-Bv-kzs"/>
-                        <outlet property="passwordTextField" destination="cuq-hd-qiO" id="wXS-BC-rvR"/>
-                        <outlet property="usernameTextField" destination="cuq-hd-qiO" id="nEM-oX-DTO"/>
+                        <outlet property="buttonLogin" destination="khS-S8-rKl" id="GBt-am-wnP"/>
+                        <outlet property="textFieldPassword" destination="cuq-hd-qiO" id="Brx-hE-oLg"/>
+                        <outlet property="textFieldUsername" destination="QUk-p9-tKd" id="xfe-ed-8dJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="509.60000000000002" y="64.31784107946028"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="idx-bN-X53">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fuO-j1-W8k" customClass="HomeViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4be-Ld-wG8"/>
+                        <viewControllerLayoutGuide type="bottom" id="EXf-Au-gbk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0FI-UD-xFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrY-nv-qUj">
+                                <frame key="frameInset" minX="58" minY="109" width="58" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="fuO-j1-W8k" eventType="touchUpInside" id="7t3-qo-VYj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-b2-Xa3">
+                                <frame key="frameInset" minX="269" minY="111" width="61" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="fuO-j1-W8k" eventType="touchUpInside" id="lJp-tp-Qeq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HomeViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-SH-O1M">
+                                <frame key="frameInset" minX="144" minY="313" width="158" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBack" destination="GrY-nv-qUj" id="YYi-VI-IWk"/>
+                        <outlet property="buttonNext" destination="8bb-b2-Xa3" id="CzQ-2R-TCT"/>
+                        <outlet property="labelSuccess" destination="Qca-SH-O1M" id="xxF-ke-ZPu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNf-fj-7Pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1176.8" y="63.418290854572717"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="8xc-mW-nYp">
+            <objects>
+                <viewController storyboardIdentifier="EditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hoS-GL-kRU" customClass="EditViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tXF-JQ-rpb"/>
+                        <viewControllerLayoutGuide type="bottom" id="D3Y-6K-Pkp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ybt-4U-aAn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbS-EA-aLC">
+                                <frame key="frameInset" minX="38" minY="83" width="59" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="hoS-GL-kRU" eventType="touchUpInside" id="Z1W-Y7-5YR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EditViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-Vu-cEA">
+                                <frame key="frameInset" minX="153" minY="323" width="146" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTB-8m-hQa">
+                                <frame key="frameInset" minX="252" minY="116" width="56" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="hoS-GL-kRU" eventType="touchUpInside" id="HG5-7n-MGd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBack" destination="mbS-EA-aLC" id="Rlh-W1-84c"/>
+                        <outlet property="buttonNext" destination="sTB-8m-hQa" id="HBA-o3-Bh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXO-Vz-MNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1834" y="63"/>
+        </scene>
+        <!--Debug View Controller-->
+        <scene sceneID="7Sq-Th-aIA">
+            <objects>
+                <viewController storyboardIdentifier="DebugViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YAG-JC-cVO" customClass="DebugViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SeS-8y-fZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="46w-wG-wgN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="okd-TM-Cr7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baF-9l-576">
+                                <frame key="frameInset" minX="46" minY="113" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="YAG-JC-cVO" eventType="touchUpInside" id="GNO-8x-bVx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdO-tS-O2x">
+                                <frame key="frameInset" minX="287" minY="113" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="YAG-JC-cVO" eventType="touchUpInside" id="iJp-UY-vfS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DebugViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa8-Sn-bAn">
+                                <frame key="frameInset" minX="120" minY="353" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBack" destination="baF-9l-576" id="b78-l1-SRk"/>
+                        <outlet property="buttonNext" destination="xdO-tS-O2x" id="CXY-vK-7GN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SG-VR-fXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2530" y="63"/>
+        </scene>
+        <!--File View Controller-->
+        <scene sceneID="swz-28-J5K">
+            <objects>
+                <viewController storyboardIdentifier="FileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ne6-Sz-rlG" customClass="FileViewController" customModule="MyFirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7yh-AX-Ou0"/>
+                        <viewControllerLayoutGuide type="bottom" id="I8X-w7-dTC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0yX-BW-B5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekE-4Q-GKh">
+                                <frame key="frameInset" minX="58" minY="119" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="Ne6-Sz-rlG" eventType="touchUpInside" id="UdU-ed-LUe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FileViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJv-S0-Y3Z">
+                                <frame key="frameInset" minX="156" minY="340" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBack" destination="ekE-4Q-GKh" id="4EZ-jU-vkB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iT1-OY-qhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300" y="63"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rOC-K9-Rn0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="0yg-w6-ErP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qct-Hv-141">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qct-Hv-141">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
