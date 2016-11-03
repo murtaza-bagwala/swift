@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func onButtonTapped(_ sender: AnyObject) {
+    @IBAction func buttonLoginTapped(_ sender: AnyObject) {
         
         let whitespace = NSCharacterSet.whitespaces
         let range = textFieldPassword.text?.rangeOfCharacter(from: whitespace)
