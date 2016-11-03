@@ -22,7 +22,13 @@ class FileViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: AnyObject) {
         
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
-         self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+        for controller in viewControllers {
+            if controller is EditViewController {
+                self.navigationController!.popToViewController(controller, animated: true);
+                break;
+            }
+        }
+        
         
     }
 
